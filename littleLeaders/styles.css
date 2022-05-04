@@ -1,0 +1,113 @@
+@import url('http://fonts.cdnfonts.com/css/serious-rounded');
+
+body {
+    background-color: rgb(255, 224, 141);
+}
+
+.heading-main {
+    margin: 25px;
+    text-align: center;
+    font-family: 'seriousr2b', sans-serif;
+    font-size: 48px;
+    word-spacing: 0;
+    letter-spacing: -3px;
+    color: white;
+    text-shadow: 5px 5px 2px rgba(63, 63, 63, 0.832);
+    transition-duration: .2s;
+}
+
+.heading-main:hover {
+    margin: 23.8px;
+    text-align: center;
+    font-family: 'seriousr2b', sans-serif;
+    font-size: 50px;
+    word-spacing: -2px;
+    letter-spacing: -1px;
+    color: white;
+    text-shadow: 7px 7px 2px rgba(63, 63, 63, 0.832);
+    transition-duration: .2s;
+}
+
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
+
+.container {  
+  display: grid;
+
+}
+
+.main-content {
+
+}
+
+  
+
+
+
+.leader-1-head {
+  position: absolute;
+  width: 50%;
+  z-index: 5;
+}
+.leader-1-torso {
+  position: absolute;
+  width: 50%;
+}
+.leader-1-larm {
+  position: absolute;
+  width: 50%;
+  left: -200px;
+  top: 40px;
+  transform: rotate(40deg);
+}
+.leader-1-rarm {
+  position: absolute;
+  width: 50%;
+}
+.leader-1-lleg {
+  position: absolute;
+  width: 50%;
+  top: 240px;
+  left: -160px;
+  transform: rotate(30deg);
+}
+.leader-1-rleg {
+  position: absolute;
+  width: 50%;
+  top: 270px;
+  left: -40px;
+  transform: rotate(15deg);
+}
+
+
+
+.leader-2-head {
+
+}
+.leader-2-torso {
+
+}
+.leader-2-larm {
+
+}
+.leader-2-rarm {
+
+}
+.leader-2-lleg {
+
+}
+.leader-2-rleg {
+
+}
