@@ -1,6 +1,14 @@
-// get element and event listeners here
-// const btnDonald = document.getElementById("donaldBtn"); //Player 1 Button
-// const btnElon = document.getElementById("elonBtn"); //Player 1 Button
+////////////////////////////////////////////////// DOM REFERENCES /////////////////////////////////////////////////////////
+
+const selDonald = document.getElementById("selDonald"); //DT character selection
+const selElon = document.getElementById("selElon"); //EM character selection
+const statsNarc = document.getElementById("statsNarc"); // Narcissm stat
+const statsInsec = document.getElementById("statsInsec"); // Insecurity stat
+const statsControv = document.getElementById("statsControv"); // Controversy stat
+const statsIntox = document.getElementById("statsIntox"); // Intoxication stat
+
+
+///////////////////////////////////////////////// CHARACTER CREATION //////////////////////////////////////////////////////////
 
 // Parent class
 class leader {
@@ -11,7 +19,7 @@ class leader {
     }
 }
 
-//Sub - trump
+//Subclass - Donald Trump
 class trump extends leader {
     constructor(name) {
         super(name);
@@ -22,7 +30,7 @@ class trump extends leader {
     }
 }
 
-//Sub - musk
+//Subclass - Elon Musk
 class musk extends leader {
     constructor(name) {
         super(name);
@@ -33,121 +41,102 @@ class musk extends leader {
     }
 }
 
-// function srtDonald (){
-//     const donald = new trump("Donald");
-//     donald = true;
-//     }
+// Upon selection - create an instance of Donald Trump
+function srtDonald() {
+    const donald = new trump("Donald");
+    donald = true;
+}
 
-// btnDonald.addEventListener("click", leaderSel)
-// btnElon.addEventListener("click", leaderSel)
+// Upon selection - create an instance of Elon Musk
+function srtElon() {
+    const elon = new musk("Elon");
+    elon = true;
+}
 
-// const leaderSel = (e) => {
-//     debugger;
-//     this.app={};
-//     if (e.path === "donaldBtn") {
-//         this.app.donald = new trump("Donald");
-//     } 
-//     if (e.path === "elonBtn") {
-//         this.app.elon = new musk("Elon");
-//     }
+// Character selection event listeners
+selDonald.addEventListener("click", srtDonald)
+selElon.addEventListener("click", srtElon)
+
+
+//////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////////////////
+
+// BUTTON - TWEET
+const goSocial = () => {
+    //Need to also include negative modifier for insec
+    randScore = Math.floor(Math.random() * 6);
+    if (elon) {
+        newRand = elon._narc += randScore;
+        console.log(`elon newRand = ${newRand}`);
+    } // How to do if statement on donald when the instance is not created?
+    // }
+    //  if (donald) {
+    //     newRand = donald._narc += randScore;
+    //     console.log(`donald newRand = ${newRand}`);
+    // }
+    return newRand;
+}
+
+// BUTTON - PRESS RELEASE
+const goPress = () => {
+    randScore = Math.floor(Math.random() * 6);
+    if (elon) {
+        newRand = elon._insec += randScore;
+        console.log(`elon newRand = ${newRand}`);
+    }
+    return newRand;
+}
+
+// UNIQUE BUTTON - TRUMP - how to load these into UI???
+const goControv = (_controv) => {
+    //Generate controversy animation & info
+    // Put limits on this. FOr example can only be used once every 3 turns?
+    if (donald._controv > 30) {
+        loseCond();
+    } else {
+        donald._controv += Math.floor(Math.random() * 6);
+        donald._narc += Math.floor(Math.random() * 6);
+        donald._insec -= Math.floor(Math.random() * 6);
+    }
+}
+
+// UNIQUE BUTTON - ELON (TO DO) - how to load these into UI???
+const goIntox = (_intox) => {}
+
+
+//////////////////////////////////////////////// WIN/LOSS CONDITIONS //////////////////////////////////////////////////////
+
+// Win conditions - these could be embedded within a parent function called win/loss?
+const winCond = (win) => {
+    if (leader._narc >= 30) {
+        console.log("you win!");
+    }
+}
+
+//Loss conditions - these could be embedded within a parent function called win/loss?
+const loseCond = (lose) => {
+    if (leader._insec >= 30) {
+        console.log("you lose!");
+    }
+}
+
+const winLose = () =>{
+    winCond();
+    loseCond();
+
+}
+
+// //Turn counter - OR USE A TIMER!!!
+// const turnCount = () => {
+//     while (leader._insec < 30 || leader._narc < 30) {
+//         turn = 0;
+//         turn += 1;
+//         winCond();
+//         loseCond();
+//         return turn;
+//     } //consider including negative impact on player scores so that eventually the player loses if they do not do anything
 // }
 
-leaderSel("click");
 
-// what happens idf smae char selected twice/
+goSocial();
+console.log(elon);
 
-
-
-    // BUTTON - TWEET
-    const goSocial = () => {
-        //Need to also include negative modifier for insec
-        randScore = Math.floor(Math.random() * 6);
-        if (elon) {
-            newRand = elon._narc += randScore;
-            console.log(`elon newRand = ${newRand}`);
-            // put in something for insecurity - slightly less than the narc result
-        } // How to do if statement on donald when the instance is not created?
-        // }
-        //  if (donald) {
-        //     newRand = donald._narc += randScore;
-        //     console.log(`donald newRand = ${newRand}`);
-        // }
-        return newRand;
-    }
-
-    // BUTTON - PRESS RELEASE
-    const goPress = () =>{
-        randScore = Math.floor(Math.random() * 10);
-        if (elon) {
-            newRand = elon._insec += randScore;
-            console.log(`elon newRand = ${newRand}`);
-        }
-        return newRand;
-    }
-
-    // UNIQUE BUTTON - TRUMP - how to load these into UI???
-    const goControv = (_controv) =>{
-        //Generate controversy animation & info
-        // Put limits on this. FOr example can only be used once every 3 turns
-        if (donald._controv > 30) {
-            loseCond();
-        } else {
-            donald._controv += Math.floor(Math.random() * 6);
-            donald._narc += Math.floor(Math.random() * 6);
-            donald._insec -= Math.floor(Math.random() * 6);
-        }
-    }
-
-    // UNIQUE BUTTON - ELON - how to load these into UI???
-   const goIntox = (_intox) =>{}
-
-
-    // Win/Loss conditions
-    const winCond = (win) => {
-        if (leader._narc >= 30) {
-            console.log("you win!");
-        } //Should we also win if insec reaches 0?
-    }
-
-    const loseCond = (lose) => {
-        if (leader._insec >= 30) {
-            console.log("you lose!");
-        } //Should we also lose if narc reaches 0?
-    }
-
-    // //Turn counter - OR USE A TIMER!!!
-    // const turnCount = () => {
-    //     while (leader._insec < 30 || leader._narc < 30) {
-    //         turn = 0;
-    //         turn += 1;
-    //         winCond();
-    //         loseCond();
-    //         return turn;
-    //     } //consider including negative impact on player scores so that eventually the player loses if they do not do anything
-    // }
-
-
-    goSocial();
-    console.log(elon);
-
-
-    // turn function which checks win/loss conditions then calls on player function (which calls on turn function after button oressed)
-    // For all buttons to work simultaniously we need to integrate the JS with a front end.
-    // Buttons with addEvent listeners
-    // getElement for narc and insec categories to be displayed on-screen
-    // Basic html - no need for styling right now
-    // determine impact of buttons on scores
-    // determine impact of intox and controv characteristics
-    // How to load unique buttons into UI?
-
-
-    // Timer?? with associated graphics (i.e. rogan show, police, rockets etc)
-
-    // gameturn
-    // check win conditions
-    // call reduce stats function
-    // call player function
-
-    // player
-    // press GamepadButton
-    // call gameturn function
