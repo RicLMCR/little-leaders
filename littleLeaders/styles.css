@@ -154,7 +154,7 @@ body {
   transition-duration: .2s;
 }
 
-a {
+.buttonThing {
 	position: relative;
     color: rgba(255,255,255,1);
     text-decoration: none;
@@ -170,12 +170,14 @@ a {
 	width: 160px;
 	text-align: center;
 	transition: all .1s ease;
+  cursor: pointer;
 }
 
-a:active {
+.buttonThing:active {
     box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
     position: relative;
     top: 6px;
+    cursor: pointer;
 }
 
 .container-key-1 {
@@ -213,22 +215,40 @@ a:active {
   position: relative;
   top: 500px;
   left: 48%;
+  margin-right: 50%;
 }
 
 #statsInsec {
   position: relative;
   top: 500px;
   left: 48%;
+  margin-right: 50%;
 }
 
 #statsControv {
   position: relative;
   top: 500px;
   left: 48%;
+  margin-right: 50%;
 }
 
 #statsIntox {
   position: relative;
   top: 500px;
   left: 48%;
+  margin-right: 50%;
+}
+
+#chosenChar {
+  display: flex;
+  justify-content: center;
+  border: solid;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.stats-container {
+  border: solid;
+  margin-top: -14%;
+  padding: 10px;
 }
