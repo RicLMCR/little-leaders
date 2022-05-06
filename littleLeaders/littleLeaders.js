@@ -1,10 +1,9 @@
 ////////////////////////////////////////////////// DOM REFERENCES & VARIABLES /////////////////////////////////////////////////////////
 
 // CHARACTER SELECTION INTEGRATION
-// const selDonald = document.getElementById("selDonald"); //DT character selection
-// const selElon = document.getElementById("selElon"); //EM character selection
+// const selDonald = document.getElementById("selDonald"); //Donald Trump character selection
+// const selElon = document.getElementById("selElon"); //Elon Musk character selection
 // const charConfirm = document.getElementById("charConfirm"); // Character confirmation
-
 
 // CHARACTER HEALTH BARS INTEGRATION
 // const statsNarc = document.getElementById("statsNarc"); // Narcissm stat
@@ -13,8 +12,9 @@
 // const statsIntox = document.getElementById("statsIntox"); // Intoxication stat
 
 // VARIABLES TO HIDE CHARACTERS
-let hideDon = document.getElementById("donald"); //Hide Donald
-let hideElon = document.getElementById("elon"); //Hide Elon
+// let hideDon = document.getElementById("donald"); //Hide the <div> containing Donald
+// let hideElon = document.getElementById("elon"); //Hide the <div> containing Elon
+
 
 
 ///////////////////////////////////////////////// CHARACTER CREATION //////////////////////////////////////////////////////////
@@ -50,19 +50,39 @@ class musk extends leader {
     }
 }
 
+//HIDE DONALD 
+const hideD = () => {
+    // if (hideDon.style.display === "none") {
+    //     hideDon.style.display = "flex";
+    // } else {
+    //     hideDon.style.display = "none";
+    // }
+    // hideElon.style.display = "flex";
+}
+
+//HIDE ELON 
+const hideE = () => {
+    // if (hideElon.style.display === "none") {
+    //     hideElon.style.display = "flex";
+    // } else {
+    //     hideElon.style.display = "none";
+    // }
+    // hideDon.style.display = "flex";
+}
+
 // // Upon selection - create an instance of Donald Trump subclass and hide the Elon avatar
-// function srtDonald() {
-    // let donald = new trump("Donald"); // activate goSocial and see if true/false detector works for donald then do elon
-    // donaldBool = 1;
-    // hideElon()
-// }
+const srtDonald = ()=> {
+let donald = new trump("Donald"); // activate goSocial and see if true/false detector works for donald then do elon
+donaldBool = 1;
+hideE()
+}
 
 // // Upon selection - create an instance of Elon Musk subclass and hide the Donald avatar
-// function srtElon() {
-    // let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
-    // elonBool = 1;
-    // hideDon()
-// }
+const srtElon =() =>{
+let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
+elonBool = 1;
+hideD()
+}
 
 // Character selection event listeners - to trigger srtDonald and srtElon functions
 // selDonald.addEventListener("click", srtDonald)
@@ -74,39 +94,66 @@ donaldBool = 1;
 let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
 elonBool = 0;
 
+// Hide ELon Div and load Donald button
 if (donaldBool == 1) {
-charConfirm = "You have selected Donald";
-// Hide ELon Div and load donald button
+    charConfirm = "You have selected Donald";
+    srtDonald()
+    hideE()
+
+    // Hide Donald Div and load Elon button
 } else if (elonBool == 1) {
     charConfirm = "You have selected Elon";
-    // Hide Donald Div and load Elon button
+    srtElon()
+    hideD()
 }
 
+//////////////////////////////////////////////// WIN/LOSS CONDITIONS //////////////////////////////////////////////////////
+
+// Combined win/loss function
+const winLose = () => {
+    if (leader._narc >= 30) {
+        console.log("you win!");
+    }
+
+    if (leader._insec >= 30) {
+        console.log("you lose!");
+    }
+}
 //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////////////////
 
 // BUTTON - TWEET
 function goSocial() {
     if (donaldBool == 1) {
-        randScore = Math.floor(Math.random() * 10);
+        randScore = Math.floor(Math.random() * 30);
         newRand = donald._narc += randScore;
+        statsNarc = donald._narc;
+        winLose();
         console.log(`Donald Social newRand = ${newRand}`);
         return newRand;
     } else if (elonBool == 1) {
-        randScore = Math.floor(Math.random() * 10);
+        randScore = Math.floor(Math.random() * 6);
         newRand = donald._narc += randScore;
+        statsNarc = elon._narc;
+        winLose();
         console.log(`Elon Social newRand = ${newRand}`);
+        return newRand;
     }
 }
 
 // BUTTON - PRESS RELEASE
 const goPress = () => {
-    randScore = Math.floor(Math.random() * 6);
     if (donaldBool == 1) {
+        randScore = Math.floor(Math.random() * 30);
         newRand = donald._insec += randScore;
+        statsInsec = donald._insec += randScore;
+        winLose();
         console.log(`Donald Press newRand = ${newRand}`);
         return newRand;
-    } else if (elonBool == 1){
+    } else if (elonBool == 1) {
+        randScore = Math.floor(Math.random() * 6);
         newRand = elon._insec += randScore;
+        statsInsec = elon._insec += randScore;
+        winLose();
         console.log(`Elon Press newRand = ${newRand}`);
         return newRand;
     }
@@ -115,74 +162,25 @@ const goPress = () => {
 // UNIQUE BUTTON - TRUMP - how to load these into UI???
 const goControv = (_controv) => {
     if (donald._controv > 30) {
-        loseCond();
+        winLose();
     } else {
         donald._controv += Math.floor(Math.random() * 6);
         donald._narc += Math.floor(Math.random() * 6);
         donald._insec -= Math.floor(Math.random() * 6);
+        winLose();
     }
 }
-
-console.log(donald)
-goControv()
-console.log(donald._narc)
-console.log(donald)
 
 // UNIQUE BUTTON - ELON (TO DO) - how to load these into UI???
 const goIntox = (_intox) => {}
 
 
-
-//HIDE DONALD 
-const hideD = ()=> {
-    if (hideDon.style.display === "none") {
-        hideDon.style.display = "flex";
-    } else {
-        hideDon.style.display = "none";
-    }
-    hideElon.style.display = "flex";
-}
-
-//HIDE ELON 
-const hideE =()=>{
-    if (hideElon.style.display === "none") {
-        hideElon.style.display = "flex";
-    } else {
-        hideElon.style.display = "none";
-    }
-    hideDon.style.display = "flex";
-}
+console.log(donald)
+goControv()
+console.log(donald._narc)
+console.log(donald)
+console.log(leader._narc)
 
 
-//////////////////////////////////////////////// WIN/LOSS CONDITIONS //////////////////////////////////////////////////////
 
-// Win conditions
-const winCond = () => {
-    if (leader._narc >= 30) {
-        console.log("you win!");
-    }
-}
 
-//Loss conditions
-const loseCond = () => {
-    if (leader._insec >= 30) {
-        console.log("you lose!");
-    }
-}
-
-// Combined win/loss function
-const winLose = () => {
-    winCond();
-    loseCond();
-}
-
-// //Turn counter - OR USE A TIMER!!!
-// const turnCount = () => {
-//     while (leader._insec < 30 || leader._narc < 30) {
-//         turn = 0;
-//         turn += 1;
-//         winCond();
-//         loseCond();
-//         return turn;
-//     } //consider including negative impact on player scores so that eventually the player loses if they do not do anything
-// }
