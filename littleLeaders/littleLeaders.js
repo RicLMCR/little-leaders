@@ -7,8 +7,53 @@ const statsInsec = document.getElementById("statsInsec"); // Insecurity stat
 const statsControv = document.getElementById("statsControv"); // Controversy stat
 const statsIntox = document.getElementById("statsIntox"); // Intoxication stat
 
+const charConfirm = document.getElementById("charConfirm"); // Character confirmation
+
+
+ // Character Movement For Reasons!
+const elonMain = document.querySelector(".l1");
+const elonHead = document.querySelector(".leader-1-head");
+const elonTorso = document.querySelector(".leader-1-torso");
+const elonLArm = document.querySelector(".leader-1-larm");
+const elonRArm = document.querySelector(".leader-1-rarm");
+const elonLLeg = document.querySelector(".leader-1-lleg");
+const elonRLeg = document.querySelector(".leader-1-rleg");
+
+const donaldMain = document.querySelector(".l2");
+const donaldHead = document.querySelector(".leader-2-head");
+const donaldTorso = document.querySelector(".leader-2-torso");
+const donaldLArm = document.querySelector(".leader-2-larm");
+const donaldRArm = document.querySelector(".leader-2-rarm");
+const donaldLLeg = document.querySelector(".leader-2-lleg");
+const donaldRLeg = document.querySelector(".leader-2-rleg");
 
 ///////////////////////////////////////////////// CHARACTER CREATION //////////////////////////////////////////////////////////
+
+// Dom's > DOM TESTING
+function elonWave() {
+    selElon.addEventListener("mouseover", () => {
+        elonLArm.style.transform = "rotate(120deg)";
+        elonLArm.style.top = "-50px";
+    })
+
+    selElon.addEventListener("mouseout", () => {
+        elonLArm.style.transform = "rotate(0deg)";
+        elonLArm.style.top = "50px";
+    })
+}  
+
+function donaldWave() {
+    selDonald.addEventListener("mouseover", () => {
+        donaldLArm.style.transform = "rotate(120deg)";
+        donaldLArm.style.top = "-50px";
+    })
+
+    selDonald.addEventListener("mouseout", () => {
+        donaldLArm.style.transform = "rotate(0deg)";
+        donaldLArm.style.top = "50px";
+    })
+}
+
 
 // Parent class
 class leader {
@@ -56,6 +101,13 @@ function srtElon() {
 // Character selection event listeners
 selDonald.addEventListener("click", srtDonald)
 selElon.addEventListener("click", srtElon)
+
+
+if (donaldBool == 1) {
+    charConfirm = "You have selected your Donald";
+    } else if (elonBool == 1) {
+        charConfirm = "You have selected Elon";
+}
 
 
 //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////////////////
@@ -139,4 +191,3 @@ const winLose = () =>{
 
 goSocial();
 console.log(elon);
-
