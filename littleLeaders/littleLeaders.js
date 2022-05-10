@@ -201,7 +201,7 @@ let goIntox = () => {
 
 goSocialBtn.addEventListener("click", goSocial);
 goPressBtn.addEventListener("click",goPress);
-// goControvBtn.addEventListener("click",goControv);
+goControvBtn.addEventListener("click",goControv);
 // goIntoxBtn.addEventListener("click", goIntox);
 
 
