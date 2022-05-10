@@ -11,12 +11,20 @@ const goPressBtn = document.getElementById("pressBtn");
 const goControvBtn = document.getElementById("controvBtn");
 // const goIntoxBtn = document.getElementById("intoxBtn");
 
+// TRIGGER BUTTON FEEDBACK
+let youWin = document.getElementById(`leader`);
+let youLose = document.getElementById(`leader`);
+let youSocial = document.getElementById(`leader`);
+let youPress = document.getElementById(`leader`);
+let youControv = document.getElementById(`leader`);
+
 // CHARACTER HEALTH BARS INTEGRATION
 let statsNarc = document.getElementById("statsNarc"); // Narcissm stat
 let statsInsec = document.getElementById("statsInsec"); // Insecurity stat
 let statsControv = document.getElementById("statsControv"); // Controversy stat
 // const statsIntox = document.getElementById("statsIntox"); // Intoxication stat
-const winLoseDisplay = document.getElementById("winLose")
+
+
 
 // VARIABLES TO HIDE CHARACTERS
 // let hideDon = document.getElementById("donald"); //Hide the <div> containing Donald
@@ -39,9 +47,9 @@ class trump extends leader {
     constructor(name) {
         super(name);
         this._name = "Donald";
-        this._narc = 15;
-        this._insec = 15;
-        this._controv = 15;
+        this._narc = 0;
+        this._insec = 0;
+        this._controv = 0;
     }
 }
 
@@ -50,9 +58,9 @@ class musk extends leader {
     constructor(name) {
         super(name);
         this._name = "Elon";
-        this._narc = 10;
-        this._insec = 5;
-        this._intox = 20;
+        this._narc = 0;
+        this._insec = 0;
+        this._intox = 0;
     }
 }
 
@@ -75,8 +83,6 @@ const hideE = () => {
     // }
     // hideDon.style.display = "flex";
 }
-
-
 
 // Character selection event listeners - to trigger srtDonald and srtElon functions
 // selDonald.addEventListener("click", srtDonald)
@@ -114,32 +120,27 @@ elonBool = 1;
 //     hideD()
 // }
 
-//////////////////////////////////////////////// WIN/LOSS CONDITIONS //////////////////////////////////////////////////////
+//////////////////////////////////////////////// WIN/LOSS CONDITIONS & POINTS CAP //////////////////////////////////////////////////////
 
 // Combined win/loss function
 const winLose = () => {
-    if (donald._narc >= 300 || elon._narc >= 30) {
+    if (donald._narc >= 100 || elon._narc >= 100) {
+        donald._narc = 100;
         console.log("you win!");
-       
     }
 
-    if (donald._insec >= 300 || elon._insec >= 30) {
+    if (donald._insec >= 100 || elon._insec >= 100) {
+        donald._insec = 100;
         console.log("you lose!");
-       
     }
 }
 
 //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////////////////
 
-
-// RANDOM NO GENERATOR 
-
-
 // BUTTON - TWEET
 function goSocial() {
     if (donaldBool == 1) {
         randScore = Math.floor(Math.random() * 6);
-            console.log(`Randscore is: ${randScore}`);
         newRand = donald._narc + randScore;
         statsNarc.innerHTML = donald._narc;
         statsInsec.innerHTML = randScore/2;
@@ -165,6 +166,7 @@ const goPress = () => {
         donald._insec += randScore;
         statsInsec.innerHTML = newRand;
         statsNarc.innerHTML = randScore/2;
+        youPress = pPress;
         winLose();
         return newRand;
     } else if (elonBool == 1) {
@@ -178,8 +180,8 @@ const goPress = () => {
     }
 }
 
-// UNIQUE BUTTON - TRUMP - how to load these into UI???
-// ///////// controversy updated button - with click counter 
+// UNIQUE BUTTON - TRUMP
+//controversy updated button - with click counter 
 let clicks = 1 
 const clickCounter = document.getElementById("controvClicks")
 const disablebtn = document.getElementById("controvBtn").disabled = false;
@@ -204,7 +206,6 @@ const goControv = (_controv) => {
         controvClicks.innerHTML = "No more controversy available!";
         disablebtn = true;
     }
-
     console.log (clicks)
 }
 
@@ -215,7 +216,6 @@ let goIntox = () => {
         newRand = elon._narc + randScore;
         statsNarc.innerHTML = newRand;
         elon._narc += newRand;
-    
         winLose();
         return newRand;
     }
@@ -223,7 +223,7 @@ let goIntox = () => {
 
 goSocialBtn.addEventListener("click", goSocial);
 goPressBtn.addEventListener("click",goPress);
-goControvBtn.addEventListener("click",  goControv);
+goControvBtn.addEventListener("click",goControv);
 // goIntoxBtn.addEventListener("click", goIntox);
 
 
