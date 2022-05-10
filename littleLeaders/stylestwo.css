@@ -1,0 +1,1420 @@
+@import url('http://fonts.cdnfonts.com/css/serious-rounded');
+
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker|Press+Start+2P|Lato:300);
+
+body {
+    background-color: rgb(255, 224, 141);
+    border: 5px solid black;
+}
+
+h2 {
+  margin-top: 25%;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'seriousr2b', sans-serif;
+  font-size: 48px;
+  word-spacing: 0;
+  letter-spacing: -3px;
+  color: white;
+  text-shadow: 5px 5px 2px rgba(63, 63, 63, 0.832);
+  transition-duration: .2s;
+}
+label {
+  margin-top: 25%;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'seriousr2b', sans-serif;
+  font-size: 16px;
+  word-spacing: 0;
+  letter-spacing: 0px;
+  color: white;
+  text-shadow: 2px 2px 1px rgba(63, 63, 63, 0.832);
+  transition-duration: .2s;
+}
+
+.heading-main {
+    margin: 25px;
+    text-align: center;
+    font-family: 'seriousr2b', sans-serif;
+    font-size: 48px;
+    word-spacing: 0;
+    letter-spacing: -3px;
+    color: white;
+    text-shadow: 5px 5px 2px rgba(63, 63, 63, 0.832);
+    transition-duration: .2s;
+}
+
+.heading-main:hover {
+    margin: 23.8px;
+    text-align: center;
+    font-family: 'seriousr2b', sans-serif;
+    font-size: 50px;
+    word-spacing: -2px;
+    letter-spacing: -1px;
+    color: white;
+    text-shadow: 7px 7px 2px rgba(63, 63, 63, 0.832);
+    transition-duration: .2s;
+}
+
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
+
+.container {  
+  display: grid;
+}
+
+.main-content {
+
+}
+
+/*///////////////////////////////////////////// Main Container Columns //////////////////////////////////////*/
+
+
+#main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.leadCol{
+  width: 50vh;
+  height: 60vh;
+  background-color: wheat;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statsWrap{
+  width:48vh;
+  height: 10vh;
+  background-color: brown;
+  border: 1px solid black;
+}
+
+.leadWrap{
+  width: 48vh;
+  height: 50vh;
+  background-color: brown;
+  border: 1px solid black;
+}
+
+#midCol{
+  width: 50vh;
+  height: 60vh;
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#prompts{
+  width: 48vh;
+  height: 40vh;
+  border: 1px solid black;
+  background-color: blueviolet;
+}
+
+#plyrSelWrap{
+  width: 48vh;
+  height: 20vh;
+  border: 1px solid black;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.plyrSelBtn{
+  width: 24vh;
+  height: 20vh;
+  border: 1px solid black;
+  background-color: rgb(83, 226, 43);
+
+}
+
+
+/*////////////////////////////////////////////////// Leader Wrappers ///////////////////////////////////////////*/
+.l1 {
+width:60vh;
+height:60vh
+}
+
+  
+.l2 {
+  margin-left: 850px;
+  margin-top: -325px;
+}
+
+#center {
+width:40vh;
+height: 60vh;
+
+
+}
+
+.stats{
+  width:35vh;
+  height: 20vh;
+  background-color: blue;
+}
+
+
+
+/*///////////////////////////////////// Leader Body Parts ///////////////////////////////////////////////////*/
+.leader-1-head {
+  position: absolute;
+  margin-left: 200px;
+  width: 200px;
+  z-index: 5;
+}
+.leader-1-torso {
+  position: relative;
+  margin-left: 165px;
+  top: 150px;
+  width: 250px;
+}
+.leader-1-larm {
+  position: relative;
+  width: 100px;
+  margin-left: -310px;
+  top: 50px;
+}
+.leader-1-rarm {
+  position: relative;
+  width: 100px;
+  margin-left: 170px;
+  top: 50px;
+  transform: rotate(-45deg);
+}
+.leader-1-lleg {
+  position: relative;
+  width: 100px;
+  margin-left: -175px;
+  top: 250px;
+  transform: rotate(-30deg);
+}
+.leader-1-rleg {
+  position: relative;
+  width: 100px;
+  margin-left: -250px;
+  top: 250px;
+  transform: rotate(-10deg);
+}
+
+
+
+.leader-2-head {
+  position: absolute;
+  margin-left: 200px;
+  width: 200px;
+  z-index: 5;
+}
+.leader-2-torso {
+  position: relative;
+  margin-left: 165px;
+  top: 150px;
+  width: 250px;
+}
+.leader-2-larm {
+  position: relative;
+  width: 50px;
+  margin-left: -250px;
+  top: 50px;
+}
+.leader-2-rarm {
+  position: relative;
+  width: 50px;
+  margin-left: 140px;
+  top: 50px;
+}
+.leader-2-lleg {
+  position: relative;
+  width: 50px;
+  margin-left: -70px;
+  top: 225px;
+  transform: rotate(10deg);
+}
+.leader-2-rleg {
+  position: relative;
+  width: 50px;
+  margin-left: -220px;
+  top: 225px;
+}
+
+/*////////////////////////////////////////////  Buttons /////////////////////////////////////////////////*/
+
+#navWrap{
+  width:40vh;
+  height: 15vh;
+  background-color: brown;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttonWrap{
+  display: flex;
+flex-direction: row;
+}
+
+.feedButton{
+  width: 5vh;
+  height: 5vh;
+  background-color: blue;
+  margin: .5vh;
+  list-style: none;
+}
+
+.feedButton:hover{
+  width: 5.5vh;
+  height: 5.5vh;
+  background-color: blue;
+  margin: .5vh;
+}
+
+/*///////////////////////////////////////////// Character Screen Styling ////////////////////////////////*/
+
+nav h1{
+  text-align: center;
+}
+
+
+#container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.leaderWrap{
+  width:80vh;
+  height: 79vh;
+  margin-bottom: 50px;
+  background-color: wheat;
+  border-radius: 50px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 8px 8px 0px 0 rgb(0, 0, 0);
+  backdrop-filter: blur( 0 );
+  -webkit-backdrop-filter: blur( 0 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.ctrlWrap{
+  width:80vh;
+  height: 79vh;
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 8px 8px 0px 0 rgb(0, 0, 0);
+  backdrop-filter: blur( 0 );
+  -webkit-backdrop-filter: blur( 0 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.ctrlWrap h2{
+  text-align: center;
+}
+
+.leadStats{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin-right: 40px;
+}
+
+.btnList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-right: 40px;
+}
+
+
+li {
+ list-style: none;
+ margin: 1vh;
+ border: 3px solid black;
+}
+
+/* CSS */
+.btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.stat{
+  margin: 15px;
+  text-align: center;
+  font-family: 'seriousr2b', sans-serif;
+  font-size: 36px;
+  word-spacing: 0;
+  letter-spacing: -3px;
+  color: white;
+  background-color: wheat;
+  text-shadow: 5px 5px 2px rgba(63, 63, 63, 0.832);
+  width:20vh;
+  height: 5vh;
+  overflow: hidden;
+}
+
+#chosenChar {
+  width: 100%;
+}
+
+/*///// POLAROID 1 THINGY CONTENT /////*/
+
+#masonry-container-1 {
+  position: absolute;
+  padding-bottom: 20px;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+  top: 20%;
+  left: 20%;
+}
+
+.polaroid-1 img {
+  margin-bottom: -5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-1 .frame-1 .filter-1 {
+  background: rgba(83, 146, 85, 0.3);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-1 .frame-1 .blackground-1 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-1 {
+  position: absolute;
+  /*width: 300px;*/
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  z-index: 99;
+  transition-duration: 1s;
+}
+
+.polaroid-1:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  transition-duration: 1s;
+}
+
+.polaroid-1.flip-1 {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation-name: flip-right-1;
+  -webkit-animation-duration: 2.5s;
+  transition-duration: 1s;
+}
+
+.polaroid-1 .frame-1 {
+  border-top: 12px solid #CBD0D4;
+  border-right: 12px solid #CBD0D4;
+  border-left: 12px solid #CBD0D4;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 3s;
+  animation-name: fadeout;
+  transition-duration: 1s;
+}
+
+.polaroid-1 img {
+  margin-bottom: -5px;
+}
+
+.polaroid-1 .frame-1 .filter-1 {
+  background: rgba(255, 255, 255, 0.417);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+}
+
+.polaroid-1 .frame-1 .blackground-1 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .frame-1:hover .flatground-1 {
+  top: 0px;
+  z-index: 99;
+  transition-duration: 1s;
+
+}
+
+
+.polaroid-1 .frame-1 .flatground-1 .title-1,
+.polaroid-1 .frame-1 .flatground-1 .desc-1 {
+  text-align: left;
+  margin: 10px;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .frame-1 .flatground-1 .title-1 {
+  font-size: 22px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .caption-1 {
+  background: #CBD0D4;
+  color: #1a1a1a;
+  display: table;
+  height: 62px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .caption-1 .date-1 {
+  display: table-cell;
+  vertical-align:middle;
+  font-family: 'Permanent Marker';
+  text-align: center;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .caption-1 .code-1 {
+  font-family: 'Press Start 2P';
+  font-size: 7px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .caption-1 .fold-1 {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  border-left: 0px solid transparent;
+	border-right: 48px solid transparent;
+	border-top: 1px solid transparent;
+  transition-duration: 1s;
+
+}
+
+.polaroid-1 .caption-1 .fold-1 .corner-1 {
+  border-bottom: 49px solid #363A35; 
+  /*box-shadow: 3px -3px 5px #a3a3a3;*/
+  transition-duration: 1s;
+
+}
+
+/*///// POLAROID 2 THINGY CONTENT /////*/
+
+#masonry-container-2 {
+  padding-bottom: 20px;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+}
+
+.polaroid-2 img {
+  margin-bottom: -5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 .filter-2 {
+  background: rgba(83, 146, 85, 0.3);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 .blackground-2 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 {
+  position: absolute;
+  /*width: 300px;*/
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  z-index: 99;
+  transition-duration: 1s;
+}
+
+.polaroid-2:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .flip-2 {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation-name: flip-right-1;
+  -webkit-animation-duration: 2.5s;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 {
+  border-top: 12px solid #CBD0D4;
+  border-right: 12px solid #CBD0D4;
+  border-left: 12px solid #CBD0D4;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 3s;
+  animation-name: fadeout;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 img {
+  margin-bottom: -5px;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 .filter-2 {
+  background: rgba(255, 255, 255, 0.417);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 .blackground-2 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2:hover .flatground-2 {
+  top: 0px;
+  z-index: 99;
+  transition-duration: 1s;
+
+}
+
+
+.polaroid-2 .frame-2 .flatground-2 .title-2,
+.polaroid-2 .frame-2 .flatground-2 .desc-2 {
+  text-align: left;
+  margin: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .frame-2 .flatground-2 .title-2 {
+  font-size: 22px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .caption-2 {
+  background: #CBD0D4;
+  color: #1a1a1a;
+  display: table;
+  height: 62px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .caption-2 .date-2 {
+  display: table-cell;
+  vertical-align:middle;
+  font-family: 'Permanent Marker';
+  text-align: center;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .caption-2 .code-2 {
+  font-family: 'Press Start 2P';
+  font-size: 7px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .caption-2 .fold-2 {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  border-left: 0px solid transparent;
+	border-right: 48px solid transparent;
+	border-top: 1px solid transparent;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-2 .caption-2 .fold-2 .corner-2 {
+  border-bottom: 49px solid #363A35; 
+  /*box-shadow: 3px -3px 5px #a3a3a3;*/
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+
+/*///// POLAROID 3 THINGY CONTENT /////*/
+
+
+#masonry-container-3 {
+  padding-bottom: 20px;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+}
+
+.polaroid-3 img {
+  margin-bottom: -5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 .filter-3 {
+  background: rgba(83, 146, 85, 0.3);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 .blackground-3 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 {
+  position: absolute;
+  /*width: 300px;*/
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  z-index: 99;
+  transition-duration: 1s;
+}
+
+.polaroid-3:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .flip-3 {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation-name: flip-right-1;
+  -webkit-animation-duration: 2.5s;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 {
+  border-top: 12px solid #CBD0D4;
+  border-right: 12px solid #CBD0D4;
+  border-left: 12px solid #CBD0D4;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 3s;
+  animation-name: fadeout;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 img {
+  margin-bottom: -5px;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 .filter-3 {
+  background: rgba(255, 255, 255, 0.417);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 .blackground-3 {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3:hover .flatground-3 {
+  top: 0px;
+  z-index: 99;
+  transition-duration: 1s;
+
+}
+
+
+.polaroid-3 .frame-3 .flatground-3 .title-3,
+.polaroid-3 .frame-3 .flatground-3 .desc-3 {
+  text-align: left;
+  margin: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .frame-3 .flatground-3 .title-3 {
+  font-size: 22px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .caption-3 {
+  background: #CBD0D4;
+  color: #1a1a1a;
+  display: table;
+  height: 62px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .caption-3 .date-3 {
+  display: table-cell;
+  vertical-align:middle;
+  font-family: 'Permanent Marker';
+  text-align: center;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .caption-3 .code-3 {
+  font-family: 'Press Start 2P';
+  font-size: 7px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .caption-3 .fold-3 {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  border-left: 0px solid transparent;
+	border-right: 48px solid transparent;
+	border-top: 1px solid transparent;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-3 .caption-3 .fold-3 .corner-3 {
+  border-bottom: 49px solid #363A35; 
+  /*box-shadow: 3px -3px 5px #a3a3a3;*/
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+/*///// POLAROID WIN THINGY CONTENT /////*/
+
+
+#masonry-container-win {
+  padding-bottom: 20px;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+}
+
+.polaroid-win img {
+  margin-bottom: -5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win .filter-win {
+  background: rgba(83, 146, 85, 0.3);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win .blackground-win {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win {
+  position: absolute;
+  /*width: 300px;*/
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  z-index: 99;
+  transition-duration: 1s;
+}
+
+.polaroid-win:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .flip-win {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation-name: flip-right-1;
+  -webkit-animation-duration: 2.5s;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win {
+  border-top: 12px solid #CBD0D4;
+  border-right: 12px solid #CBD0D4;
+  border-left: 12px solid #CBD0D4;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 3s;
+  animation-name: fadeout;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win img {
+  margin-bottom: -5px;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win .filter-win {
+  background: rgba(255, 255, 255, 0.417);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win .blackground-win {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win:hover .flatground-win {
+  top: 0px;
+  z-index: 99;
+  transition-duration: 1s;
+
+}
+
+
+.polaroid-win .frame-win .flatground-win .title-win,
+.polaroid-win .frame-win .flatground-win .desc-win {
+  text-align: left;
+  margin: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .frame-win .flatground-win .title-win {
+  font-size: 22px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .caption-win {
+  background: #CBD0D4;
+  color: #1a1a1a;
+  display: table;
+  height: 62px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .caption-win .date-win {
+  display: table-cell;
+  vertical-align:middle;
+  font-family: 'Permanent Marker';
+  text-align: center;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .caption-win .code-win {
+  font-family: 'Press Start 2P';
+  font-size: 7px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .caption-win .fold-win {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  border-left: 0px solid transparent;
+	border-right: 48px solid transparent;
+	border-top: 1px solid transparent;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-win .caption-win .fold-win .corner-win {
+  border-bottom: 49px solid #363A35; 
+  /*box-shadow: 3px -3px 5px #a3a3a3;*/
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+
+/*///// POLAROID LOSE THINGY CONTENT /////*/
+
+
+#masonry-container-lose {
+  padding-bottom: 20px;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+}
+
+.polaroid-lose img {
+  margin-bottom: -5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose .filter-lose {
+  background: rgba(83, 146, 85, 0.3);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose .blackground-lose {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose {
+  position: absolute;
+  /*width: 300px;*/
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 25%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  z-index: 99;
+  transition-duration: 1s;
+}
+
+.polaroid-lose:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .flip-lose {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation-name: flip-right-1;
+  -webkit-animation-duration: 2.5s;
+  transition-duration: 1s;
+  opacity: 0%;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose {
+  border-top: 12px solid #CBD0D4;
+  border-right: 12px solid #CBD0D4;
+  border-left: 12px solid #CBD0D4;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 3s;
+  animation-name: fadeout;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose img {
+  margin-bottom: -5px;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose .filter-lose {
+  background: rgba(255, 255, 255, 0.417);
+  height: 300px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose .blackground-lose {
+  height: 300px;
+  width: 280px;
+  background: #1a1a1a;
+  position: absolute;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 12s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  animation-name: fadeout;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose:hover .flatground-lose {
+  top: 0px;
+  z-index: 99;
+  transition-duration: 1s;
+
+}
+
+
+.polaroid-lose .frame-lose .flatground-lose .title-lose,
+.polaroid-lose .frame-lose .flatground-lose .desc-lose {
+  text-align: left;
+  margin: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .frame-lose .flatground-lose .title-lose {
+  font-size: 22px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .caption-lose {
+  background: #CBD0D4;
+  color: #1a1a1a;
+  display: table;
+  height: 62px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .caption-lose .date-lose {
+  display: table-cell;
+  vertical-align:middle;
+  font-family: 'Permanent Marker';
+  text-align: center;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .caption-lose .code-lose {
+  font-family: 'Press Start 2P';
+  font-size: 7px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .caption-lose .fold-lose {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  border-left: 0px solid transparent;
+	border-right: 48px solid transparent;
+	border-top: 1px solid transparent;
+  transition-duration: 1s;
+  z-index: 99;
+}
+
+.polaroid-lose .caption-lose .fold-lose .corner-lose {
+  border-bottom: 49px solid #363A35; 
+  /*box-shadow: 3px -3px 5px #a3a3a3;*/
+  transition-duration: 1s;
+  z-index: 99;
+}

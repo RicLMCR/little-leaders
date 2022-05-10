@@ -5,25 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylestwo.css">
     <title>Donald</title>
 </head>
 
 <body>
+
     <nav>
-        <h1>DONALD J TRUMP</h1>
+        <a href="/index.html" style="text-align:center;text-decoration:none;">
+        <h1 class="heading-main">DONALD J TRUMP</h1>
+        </a>
     </nav>
 
     <div id="container">
-        <div class="leaderWrap"></div>
+        <div class="leaderWrap">
+            <img id="chosenChar" src="/src/trump/trump-full.png" alt="Donald Trump">
+
+        </div>
 
         <div class="ctrlWrap">
-            <h2>Feed Your Leader</h2>
+            <h2>STATS</h2>
             <ul id="donList" class="btnList">
-                <li id="socialBtn" class="btn">Tweet!</li>
-                <li id="pressBtn" class="btn">Press Release</li>
-                <li id="controvBtn" class="btn">Controversy!</li>
-                    
+                <li id="socialBtn" class="btn" onclick="donaldPic1()">Social Media</li>
+                <li id="pressBtn" class="btn" onclick="donaldPic2()">Press Conference</li>
+                <li id="controvBtn" class="btn" onclick="donaldPic3()">Controversy</li>
             </ul>
 
             <ul id="donStats" class="leadStats">
@@ -40,17 +45,87 @@
                     <li id="statsControv" class="stat"></li>
                 </div>
             </ul>
-            <h2 id = "controvClicks"></h2>
         </div>
-      
+
+        <div id="masonry-container-1">
+            <div class="polaroid-1 flip-1">
+            <div class="frame-1 hover-info-1">
+                <div class="filter-1"></div>
+                <img src="/src/trump/image-social.jpeg" style="width:250px;height:180px;"/>
+            </div>
+            <div class="caption-1">
+                <span class="code-1">04lose41077087-8</span>
+                <span class="date-1">12/15/2012</span>
+                <span class="fold-1 corner-1"></span>
+                <span class="fold-1 flap-1"></span>
+            </div>
+            </div>
+        </div>
+
+        <div id="masonry-container-2">
+            <div class="polaroid-2 flip-2">
+            <div class="frame-2 hover-info-2">
+                <div class="filter-2"></div>
+                <img src="/src/trump/image-press.jpg" style="width:250px;height:170px;"/>
+            </div>
+            <div class="caption-2">
+                <span class="code-2">04lose41077087-8</span>
+                <span class="date-2">12/15/2012</span>
+                <span class="fold-2 corner-2"></span>
+                <span class="fold-2 flap-2"></span>
+            </div>
+            </div>
+        </div>
+
+        <div id="masonry-container-3">
+            <div class="polaroid-3 flip-3">
+            <div class="frame-3 hover-info-3">
+                <div class="filter-3"></div>
+                <img src="/src/trump/scandal-trump1.png" style="width:250px;height:230px;z-index: 98;"/>
+            </div>
+            <div class="caption-3">
+                <span class="code-3">04lose41077087-8</span>
+                <span class="date-3">12/15/2012</span>
+                <span class="fold-3 corner-3"></span>
+                <span class="fold-3 flap-3"></span>
+            </div>
+            </div>
+        </div>
+
+        <div id="masonry-container-win">
+            <div class="polaroid-win flip-win">
+            <div class="frame-win hover-info-win">
+                <div class="filter-win"></div>
+                <img src="/src/trump/you-win.png" style="width:250px;height:180px;z-index: -1;"/>
+            </div>
+            <div class="caption-win">
+                <span class="code-win">04win41077087-8</span>
+                <span class="date-win">12/15/2012</span>
+                <span class="fold-win corner-win"></span>
+                <span class="fold-win flap-win"></span>
+            </div>
+            </div>
+        </div>
+
+        <div id="masonry-container-lose">
+            <div class="polaroid-lose flip-lose">
+            <div class="frame-lose hover-info-lose">
+                <div class="filter-lose"></div>
+                <img src="/src/trump/you-lose.png" style="width:250px;height:200px;z-index: 99;"/>
+            </div>
+            <div class="caption-lose">
+                <span class="code-lose">04lose41077087-8</span>
+                <span class="date-lose">12/15/2012</span>
+                <span class="fold-lose corner-lose"></span>
+                <span class="fold-lose flap-lose"></span>
+            </div>
+            </div>
+        </div>
+
 
     </div>
 
-    
-
-
-
-    <script src=" littleLeaders.js">
+    <script src="/littleLeaders.js">
     </script>
 </body>
 
