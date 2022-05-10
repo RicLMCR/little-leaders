@@ -5,16 +5,21 @@
 // const selElon = document.getElementById("selElon"); //Elon Musk character selection
 // const charConfirm = document.getElementById("charConfirm"); // Character confirmation
 
+// BUTTON INTEGRATION
+const goSocialBtn = document.getElementById("socialBtn");
+const goPressBtn = document.getElementById("pressBtn");
+const goControvBtn = document.getElementById("controvBtn");
+// const goIntoxBtn = document.getElementById("intoxBtn");
+
 // CHARACTER HEALTH BARS INTEGRATION
-// const statsNarc = document.getElementById("statsNarc"); // Narcissm stat
-// const statsInsec = document.getElementById("statsInsec"); // Insecurity stat
-// const statsControv = document.getElementById("statsControv"); // Controversy stat
+let statsNarc = document.getElementById("statsNarc"); // Narcissm stat
+let statsInsec = document.getElementById("statsInsec"); // Insecurity stat
+let statsControv = document.getElementById("statsControv"); // Controversy stat
 // const statsIntox = document.getElementById("statsIntox"); // Intoxication stat
 
 // VARIABLES TO HIDE CHARACTERS
 // let hideDon = document.getElementById("donald"); //Hide the <div> containing Donald
 // let hideElon = document.getElementById("elon"); //Hide the <div> containing Elon
-
 
 
 ///////////////////////////////////////////////// CHARACTER CREATION //////////////////////////////////////////////////////////
@@ -70,72 +75,81 @@ const hideE = () => {
     // hideDon.style.display = "flex";
 }
 
-// // Upon selection - create an instance of Donald Trump subclass and hide the Elon avatar
-const srtDonald = ()=> {
-let donald = new trump("Donald"); // activate goSocial and see if true/false detector works for donald then do elon
-donaldBool = 1;
-hideE()
-}
 
-// // Upon selection - create an instance of Elon Musk subclass and hide the Donald avatar
-const srtElon =() =>{
-let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
-elonBool = 1;
-hideD()
-}
 
 // Character selection event listeners - to trigger srtDonald and srtElon functions
 // selDonald.addEventListener("click", srtDonald)
 // selElon.addEventListener("click", srtElon)
 
-
 let donald = new trump("Donald"); // activate goSocial and see if true/false detector works for donald then do elon
 donaldBool = 1;
 let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
-elonBool = 0;
+elonBool = 1;
 
 // Hide ELon Div and load Donald button
-if (donaldBool == 1) {
-    charConfirm = "You have selected Donald";
-    srtDonald()
-    hideE()
+// if (donaldBool == 1) {
+//     charConfirm = "You have selected Donald";
+//     srtDonald()
+//     hideE()
 
     // Hide Donald Div and load Elon button
-} else if (elonBool == 1) {
-    charConfirm = "You have selected Elon";
-    srtElon()
-    hideD()
-}
+// } else if (elonBool == 1) {
+//     charConfirm = "You have selected Elon";
+//     srtElon()
+//     hideD()
+// }
+
+// Upon selection - create an instance of Donald Trump subclass and hide the Elon avatar
+// const srtDonald = () => {
+//     let donald = new trump("Donald"); // activate goSocial and see if true/false detector works for donald then do elon
+//     let donaldBool = 1;
+//     hideE()
+// }
+
+// Upon selection - create an instance of Elon Musk subclass and hide the Donald avatar
+// const srtElon = () => {
+//     let elon = new musk("Elon"); // activate goSocial and see if true/false detector works for donald then do elon
+//     let elonBool = 1;
+//     hideD()
+// }
 
 //////////////////////////////////////////////// WIN/LOSS CONDITIONS //////////////////////////////////////////////////////
 
 // Combined win/loss function
 const winLose = () => {
-    if (leader._narc >= 30) {
+    if (donald._narc >= 30 || elon._narc >= 30) {
         console.log("you win!");
     }
 
-    if (leader._insec >= 30) {
+    if (donald._insec >= 30 || elon._insec >= 30) {
         console.log("you lose!");
     }
 }
+
 //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////////////////
+
+
+// RANDOM NO GENERATOR 
+
 
 // BUTTON - TWEET
 function goSocial() {
     if (donaldBool == 1) {
-        randScore = Math.floor(Math.random() * 30);
-        newRand = donald._narc += randScore;
-        statsNarc = donald._narc;
+        randScore = Math.floor(Math.random() * 6);
+            console.log(`Randscore is: ${randScore}`);
+        newRand = donald._narc + randScore;
+        statsNarc.innerHTML = donald._narc;
+        statsInsec.innerHTML = randScore/2;
+        donald._narc += newRand;
         winLose();
-        console.log(`Donald Social newRand = ${newRand}`);
         return newRand;
     } else if (elonBool == 1) {
         randScore = Math.floor(Math.random() * 6);
-        newRand = donald._narc += randScore;
-        statsNarc = elon._narc;
+        newRand = donald._narc + randScore;
+        statsNarc.innerHTML = elon._narc;
+        statsInsec.innerHTML = randScore/2;
+        elon._narc += newRand;
         winLose();
-        console.log(`Elon Social newRand = ${newRand}`);
         return newRand;
     }
 }
@@ -143,18 +157,20 @@ function goSocial() {
 // BUTTON - PRESS RELEASE
 const goPress = () => {
     if (donaldBool == 1) {
-        randScore = Math.floor(Math.random() * 30);
-        newRand = donald._insec += randScore;
-        statsInsec = donald._insec += randScore;
+        randScore = Math.floor(Math.random() * 6);
+        newRand = donald._insec + randScore;
+        donald._insec += randScore;
+        statsInsec.innerHTML = newRand;
+        statsNarc.innerHTML = randScore/2;
         winLose();
-        console.log(`Donald Press newRand = ${newRand}`);
         return newRand;
     } else if (elonBool == 1) {
         randScore = Math.floor(Math.random() * 6);
-        newRand = elon._insec += randScore;
-        statsInsec = elon._insec += randScore;
+        newRand = elon._insec + randScore;
+        elon._insec += randScore;
+        statsInsec.innerHTML = newRand;
+        statsNarc.innerHTML = randScore/2;
         winLose();
-        console.log(`Elon Press newRand = ${newRand}`);
         return newRand;
     }
 }
@@ -164,23 +180,38 @@ const goControv = (_controv) => {
     if (donald._controv > 30) {
         winLose();
     } else {
-        donald._controv += Math.floor(Math.random() * 6);
-        donald._narc += Math.floor(Math.random() * 6);
-        donald._insec -= Math.floor(Math.random() * 6);
+        donald._narc += randScore();
+        donald._insec -= randScore();
+        donald._controv += randScore();
         winLose();
     }
 }
 
 // UNIQUE BUTTON - ELON (TO DO) - how to load these into UI???
-const goIntox = (_intox) => {}
+let goIntox = () => {
+    if (elonBool == 1) {
+        randScore = Math.floor(Math.random() * 6);
+        newRand = elon._narc + randScore;
+        statsNarc.innerHTML = newRand;
+        elon._narc += newRand;
+        winLose();
+        return newRand;
+    }
+}
+
+goSocialBtn.addEventListener("click", goSocial);
+goPressBtn.addEventListener("click",goPress);
+// goControvBtn.addEventListener("click",goControv);
+// goIntoxBtn.addEventListener("click", goIntox);
+
+
+
+
 
 
 console.log(donald)
-goControv()
-console.log(donald._narc)
+goSocial()
 console.log(donald)
-console.log(leader._narc)
-
-
-
-
+goSocial()
+console.log(donald)
+goSocial()
