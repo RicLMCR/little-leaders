@@ -294,10 +294,9 @@ const goPress = () => {
     if (donaldBool == 1) {
         randScore = Math.floor(Math.random() * 6);
         newRand = donald._insec + randScore;
-        donald._insec += randScore;
-        statsInsec.innerHTML = newRand;
+        statsInsec.innerHTML = donald._insec;
         statsNarc.innerHTML = randScore/2;
-        youPress = pPress;
+        donald._insec += newRand;
         winLose();
         return newRand;
     } else if (elonBool == 1) {
