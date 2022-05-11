@@ -262,7 +262,7 @@ const winLose = () => {
     if (donald._insec >= 100 || elon._insec >= 100) {
         donald._insec = 100;
         console.log("you lose!");
-        donadonaldPicWin()
+        donaldPicLose()
     }
 }
 
